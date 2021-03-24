@@ -10,7 +10,7 @@ import NewDungeonCard from "../components/NewDungeonCard";
 import Avatar from "@material-ui/core/Avatar";
 import CartTable from "../components/CartTable";
 import Button from "@material-ui/core/Button";
-
+import {InjectedCheckoutForm} from "../components/CheckoutForm"
 function NewDungeonPage(){
     const [rows, setRows] = React.useState([]);
     const [total, setTotal] = React.useState(0);
@@ -34,30 +34,28 @@ function NewDungeonPage(){
         </Grid>
 
       <Grid container direction="row" spacing={2}>
-        <Grid item xs={6}>
-          <Grid container direction="column" spacing={2} align="right">
+        <Grid item xs={12} sm={6} container direction="column" spacing={2} align="right">
             <NewDungeonCard onClick={addToCart} title="Free Dungeon" price={0} h5="4 person occupancy" body2="For you and three cellmates" sku="0"/>
             <NewDungeonCard onClick={addToCart} title="Micro Dungeon" price={2} h5="10 person occupancy" body2="At most 10 detainees can inhabit this space" sku="1"/>
             <NewDungeonCard onClick={addToCart} title="Small Dungeon" price={10} h5="100 person occupancy" body2="100 souls can dwell here together" sku="3"/>
             <NewDungeonCard onClick={addToCart} title="Medium Dungeon" price={20} h5="1000 person occupancy" body2="Where 1000 beings mingle to their delight" sku="4"/>
           </Grid>
-        </Grid>
-        <Grid item xs={5}>
-          <Card>
-            <CardHeader title="Cart" align="right"/>
+        <Grid item xs={12} sm={5}>
+          <Card style={{backgroundColor:`rgba(245,245,245,1.0)`,position:"sticky",top:"5px",maxWidth:"400px"}}>
+            <CardHeader title="Cart" align="center"/>
             <CardContent>
               <Grid container spacing={2} direction="column" align="right">
                 <Grid item>
                   <CartTable rows={rows} total={total} onClickRow={removeFromCart}/>
                 </Grid>
                 <Grid>
-                  <Button variant="contained">Checkout</Button>
+    <InjectedCheckoutForm/>
                 </Grid>
             </Grid>
             </CardContent>
           </Card>
         </Grid>
-    </Grid>
+      </Grid>
     </Grid>
     </React.Fragment>
 }

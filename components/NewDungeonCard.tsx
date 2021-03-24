@@ -17,7 +17,7 @@ function NewDungeonCard(props){
                     
                      <Button component={Paper} onClick={()=>onClick(title,sku,price)} style={{"text-transform":"none"}}>
                          <Card elevation="0">
-                           <CardHeader title={title}/>
+                           <CardHeader title={title} align="left"/>
                            <CardContent>
                              <Typography variant="h2">{"$"+price+"/month"}</Typography>
                              <Typography variant="h5">{h5}</Typography>
