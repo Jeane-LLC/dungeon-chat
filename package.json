@@ -4,9 +4,10 @@
   "description": "chat with a thousand people",
   "main": "index.js",
   "scripts": {
-      "test": "jest",
-      "build": "next build",
-      "start": "next start",
+    "test": "jest",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,14 @@
   },
   "homepage": "https://github.com/Jeane-LLC/dungeon-chat#readme",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "jest": "^26.6.3",
     "next": "^10.0.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "typescript": "^4.2.3"
   }
 }
