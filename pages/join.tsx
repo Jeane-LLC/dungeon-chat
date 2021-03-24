@@ -3,6 +3,9 @@ import * as ReactDOM from "react-dom";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import JoinableDungeonsTable from "../components/JoinableDungeonsTable"
+import ButtonGroup from "@material-ui/core/ButtonGroup"
+import Button from "@material-ui/core/Button"
+
 
 function JoinPage(){
     return <div>
@@ -12,6 +15,13 @@ function JoinPage(){
       </Grid>
                <Grid item>
                  <JoinableDungeonsTable/>
+               </Grid>
+               <Grid>
+                 <ButtonGroup variant="contained">
+                  <Button>Enter</Button>
+                  <Button>Rename</Button>
+                  <Button>Forget</Button>
+                </ButtonGroup>
                </Grid>
     </Grid>
     </div>

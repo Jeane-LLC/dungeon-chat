@@ -5,9 +5,10 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
 import TableFooter from "@material-ui/core/TableFooter";
 import TableHead from "@material-ui/core/TableHead";
+
+
 function JoinableDungeonsTable(props){
 
     return(
@@ -21,7 +22,6 @@ function JoinableDungeonsTable(props){
               </TableRow>
               </TableHead>
               <TableFooter>
-                
               </TableFooter>
             </Table>
           </TableContainer>

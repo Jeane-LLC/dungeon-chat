@@ -4,37 +4,55 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Link from 'next/link'
+import MuiAlert from "@material-ui/lab/Alert";
+import Snackbar from "@material-ui/core/Snackbar";
+
+function CookieAlert(props){
+    return <MuiAlert elevation={6} variant="filled" {...props}/>
+}
 
 function HomePage(){
+
+    const [open, setOpen] = React.useState(true);
+    
+    const handleClose = () => {
+        setOpen(false);
+    }
+    
     return <React.Fragment>
-             <Grid container direction="column" alignItems="center">
+             <Grid container direction="column" justify="center" alignItems="center" spacing={1}>
                <Grid item>
                  <Typography variant="h1">
                    dungeon.chat
                  </Typography>
                </Grid>
+               <Grid item container direction="row" justify="center" spacing={1}>
                <Grid item>
-                 <Button>
-                   <Link href="/join">
+                 <Link href="/join">
+                   <Button variant="contained">
                      Join
-                   </Link>
-                 </Button>
+                   </Button>
+                 </Link>
                </Grid>
                <Grid item>
-                 <Button>
+                 
                    <Link href="/new">
-                     New
+                     <Button variant="contained">New</Button>
                    </Link>
-                 </Button>
+                 
                </Grid>
                <Grid item>
-                 <Button>
                    <Link href="/manage">
-                     Manage
+                     <Button variant="contained">Manage</Button>
                    </Link>
-                 </Button>
+               </Grid>
                </Grid>
              </Grid>
+             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+               <CookieAlert severity="info" onClose={handleClose}>
+                 This website uses cookies!<br/>Leave now or accept the terms
+               </CookieAlert>
+             </Snackbar>
            </React.Fragment>
 }
 
