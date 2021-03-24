@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import JoinableDungeonsTable from "../components/JoinableDungeonsTable"
 import ButtonGroup from "@material-ui/core/ButtonGroup"
 import Button from "@material-ui/core/Button"
-
+import Paper from "@material-ui/core/Paper"
 
 function JoinPage(){
     return <div>
@@ -13,6 +13,7 @@ function JoinPage(){
       <Grid item>
         <Typography variant="h1">Join dungeons</Typography>
       </Grid>
+               <Paper align="center">
                <Grid item>
                  <JoinableDungeonsTable/>
                </Grid>
@@ -23,6 +24,7 @@ function JoinPage(){
                   <Button>Forget</Button>
                 </ButtonGroup>
                </Grid>
+               </Paper>
     </Grid>
     </div>
 }
