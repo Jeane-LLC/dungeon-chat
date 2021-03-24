@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import ManagableDungeonsTable from "../components/ManagableDungeonsTable";
+import ManageableDungeonsTable from "../components/ManageableDungeonsTable";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
@@ -16,7 +16,7 @@ function ManagePage(){
                
                  <Paper align="center">
                  <Grid item>
-                   <ManagableDungeonsTable/>
+                   <ManageableDungeonsTable/>
                  </Grid>
                  <Grid item>
                    <ButtonGroup variant="contained">
