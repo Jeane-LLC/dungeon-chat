@@ -9,7 +9,7 @@ import TableFooter from "@material-ui/core/TableFooter";
 import TableHead from "@material-ui/core/TableHead";
 
 
-function ManagableDungeonsTable(props){
+function ManageableDungeonsTable(props){
 
     return(
         <React.Fragment>
@@ -31,4 +31,4 @@ function ManagableDungeonsTable(props){
     )
 }
 
-export default ManagableDungeonsTable
+export default ManageableDungeonsTable

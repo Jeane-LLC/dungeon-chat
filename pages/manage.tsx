@@ -11,7 +11,7 @@ function ManagePage(){
     return <React.Fragment>
              <Grid container direction="column" spacing={1} alignItems="center">
                <Grid item>
-                 <Typography variant="h1">Manage</Typography>
+                 <Typography variant="h1">Manage dungeons</Typography>
                </Grid>
                
                  <Paper align="center">
@@ -20,7 +20,8 @@ function ManagePage(){
                  </Grid>
                  <Grid item>
                    <ButtonGroup variant="contained">
-                     <Button>Renew</Button>
+                     <Button>Keys</Button>
+                     <Button>Rename</Button>
                      <Button>Delete</Button>
                    </ButtonGroup>
                  </Grid>
