@@ -36,7 +36,7 @@ function DungeonKeysTable({rows}){
                   <TableCell>row.numberOfUsers</TableCell>
                 </TableRow>
             )
-        }
+        })
         }
             </Table>
           </TableContainer>
