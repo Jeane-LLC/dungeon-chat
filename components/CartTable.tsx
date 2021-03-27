@@ -30,7 +30,7 @@ function CartTable(props){
     ))}
                  </TableBody>
                  <TableFooter>
-                   <TableRow component="tf" scope="row">
+                   <TableRow>
                      <TableCell>
                        Total
                      </TableCell>
