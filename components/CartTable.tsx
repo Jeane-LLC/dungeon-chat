@@ -30,8 +30,8 @@ function CartTable(props){
     ))}
                  </TableBody>
                  <TableFooter>
-                   <TableRow>
-                     <TableCell component="tf" scope="row">
+                   <TableRow component="tf" scope="row">
+                     <TableCell>
                        Total
                      </TableCell>
                      <TableCell align="right">
