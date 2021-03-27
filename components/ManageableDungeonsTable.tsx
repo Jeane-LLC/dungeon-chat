@@ -7,9 +7,9 @@ import TableCell from "@material-ui/core/TableCell";
 import Paper from "@material-ui/core/Paper";
 import TableFooter from "@material-ui/core/TableFooter";
 import TableHead from "@material-ui/core/TableHead";
+import TableBody from "@material-ui/core/TableBody";
 
-
-function ManageableDungeonsTable(props){
+function ManageableDungeonsTable({rows}){
 
     return(
         <React.Fragment>
@@ -23,6 +23,18 @@ function ManageableDungeonsTable(props){
                 <TableCell>Price</TableCell>
               </TableRow>
               </TableHead>
+              <TableBody>
+                {rows.map((row) => {
+                    return (
+                        <TableRow>
+                          <TableCell>{row.dungeonName}</TableCell>
+                          <TableCell>{row.dungeonID}</TableCell>
+                          <TableCell>{row.renewalDate}</TableCell>
+                          <TableCell>{row.price}</TableCell>
+                        </TableRow>
+                    )
+                })}
+              </TableBody>
               <TableFooter>
               </TableFooter>
             </Table>
