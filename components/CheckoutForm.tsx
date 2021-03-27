@@ -110,8 +110,6 @@ const CheckoutForm = () => {
     setPaymentMethod(null);
     setBillingDetails({
       email: '',
-      phone: '',
-      name: '',
     });
   };
 
