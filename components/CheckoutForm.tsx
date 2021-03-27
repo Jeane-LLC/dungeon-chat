@@ -154,7 +154,7 @@ const CheckoutForm = () => {
           <Grid item>
           {error && <ErrorMessage>{error.message}</ErrorMessage>}
           </Grid>
-          <Grid item align="center">
+          <Grid item alignContent="center">
       <SubmitButton processing={processing} error={error} disabled={!stripe}>
         Checkout
       </SubmitButton>
