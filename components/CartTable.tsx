@@ -8,8 +8,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableFooter from "@material-ui/core/TableFooter";
 
-function CartTable(props){
-    const {rows,total=0, onClickRow} = props;
+function CartTable({rows,total=0,onClickRow}){
     return <React.Fragment>
              <TableContainer>
                <Table>
