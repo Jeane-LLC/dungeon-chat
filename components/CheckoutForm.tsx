@@ -44,6 +44,14 @@ function Field({
 
 Field.propTypes = {
     onSubmit:PropTypes.func.isRequired,
+    label:PropTypes.string,
+    id:PropTypes.string,
+    type:PropTypes.string,
+    placeholder:PropTypes.string,
+    required:PropTypes.bool,
+    autoComplete:PropTypes.bool,
+    value:PropTypes.string,
+    onChange:PropTypes.func.isRequired,
 }
 
 const SubmitButton = ({processing, error, children, disabled}) => (
