@@ -36,7 +36,7 @@ function Field({
   autoComplete,
   value,
   onChange,
-}: InferProps<typeof Field.propTypes>): typeof(TextField){
+}: InferProps<typeof Field.propTypes>): React.ComponentType{
     return (
     <TextField onSubmit={onSubmit} style={{"width":"100%"}} label={label} onChange={onChange} value={value} id={id} placeholder={placeholder} required={required} autoComplete={autoComplete} type={type}>
   </TextField>
