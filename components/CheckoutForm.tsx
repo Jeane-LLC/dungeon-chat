@@ -36,10 +36,11 @@ function Field({
   autoComplete,
   value,
   onChange,
-}: InferProps<typeof Field.propTypes>)(
+}: InferProps<typeof Field.propTypes>):PropTypes.node{
+    return (
     <TextField onSubmit={onSubmit} style={{"width":"100%"}} label={label} onChange={onChange} value={value} id={id} placeholder={placeholder} required={required} autoComplete={autoComplete} type={type}>
   </TextField>
-);
+);}
 
 Field.propTypes = {
     onSubmit:PropTypes.func.isRequired,
