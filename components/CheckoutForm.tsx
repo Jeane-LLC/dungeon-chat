@@ -12,13 +12,19 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
+import PropTypes, {InferProps} from "prop-types";
 
-const CardField = ({onChange:PropTypes.func}) => (
+const CardField = ({onChange}: InferProps<typeof CardField.propTypes>) => (
   <React.Fragment>
     <CardElement onChange={onChange} />
   </React.Fragment>
 );
 
+
+CardField.propTypes = {                  
+
+  onChange:PropTypes.func.isRequired,                                         
+}                       
 const Field = ({
     onSubmit,
     label,
