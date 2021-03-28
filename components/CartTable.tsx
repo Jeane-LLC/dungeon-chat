@@ -7,6 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableFooter from "@material-ui/core/TableFooter";
+import PropTypes from "prop-types";
 
 function CartTable({rows,total=0,onClickRow}){
     return <React.Fragment>
@@ -41,6 +42,12 @@ function CartTable({rows,total=0,onClickRow}){
                </Table>
              </TableContainer>
            </React.Fragment>
+}
+
+CartTable.propTypes = {
+    rows : PropTypes.array,
+    total : PropTypes.number,
+    onClickRow : PropTypes.function,
 }
 
 export default CartTable
