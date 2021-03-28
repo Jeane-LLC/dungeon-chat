@@ -9,7 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableFooter from "@material-ui/core/TableFooter";
 import PropTypes, {InferProps} from "prop-types";
 
-function CartTable({rows,total=0,onClickRow}: InferProps<typeof CartTable.propTypes>){
+function CartTable({rows=[],total=0,onClickRow}: InferProps<typeof CartTable.propTypes>){
     return (<React.Fragment>
              <TableContainer>
                <Table>
