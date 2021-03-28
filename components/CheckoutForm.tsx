@@ -46,7 +46,7 @@ Field.propTypes = {
     onSubmit:PropTypes.func.isRequired,
     label:PropTypes.string,
     id:PropTypes.string,
-    type:PropTypes.string,
+    type:PropTypes.string.isRequired,
     placeholder:PropTypes.string,
     required:PropTypes.bool,
     autoComplete:PropTypes.bool,
