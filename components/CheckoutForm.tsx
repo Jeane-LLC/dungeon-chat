@@ -14,11 +14,12 @@ import Typography from "@material-ui/core/Typography";
 
 import PropTypes, {InferProps} from "prop-types";
 
-const CardField = ({onChange}: InferProps<typeof CardField.propTypes>) => (
+function CardField({onChange}: InferProps<typeof CardField.propTypes>){
+return(
   <React.Fragment>
     <CardElement onChange={onChange} />
   </React.Fragment>
-);
+);}
 
 
 CardField.propTypes = {                  
