@@ -13,7 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 
-const CardField = ({onChange}) => (
+const CardField = ({onChange:PropTypes.func}) => (
   <React.Fragment>
     <CardElement onChange={onChange} />
   </React.Fragment>
