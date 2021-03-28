@@ -36,7 +36,7 @@ function Field({
   autoComplete,
   value,
   onChange,
-}: InferProps<typeof Field.propTypes>):PropTypes.element{
+}: InferProps<typeof Field.propTypes>):PropTypes.instanceOf(TextField){
     return (
     <TextField onSubmit={onSubmit} style={{"width":"100%"}} label={label} onChange={onChange} value={value} id={id} placeholder={placeholder} required={required} autoComplete={autoComplete} type={type}>
   </TextField>
