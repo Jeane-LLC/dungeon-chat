@@ -47,7 +47,7 @@ function CartTable({rows=[],total=0,onClickRow}: InferProps<typeof CartTable.pro
 CartTable.propTypes = {
     rows : PropTypes.array.isRequired,
     total : PropTypes.number,
-    onClickRow : PropTypes.function,
+    onClickRow : PropTypes.func,
 }
 
 export default CartTable
