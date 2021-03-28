@@ -44,13 +44,13 @@ function Field({
 
 Field.propTypes = {
     onSubmit:PropTypes.func.isRequired,
-    label:PropTypes.string,
-    id:PropTypes.string,
+    label:PropTypes.string.isRequired,
+    id:PropTypes.string.isRequired,
     type:PropTypes.string.isRequired,
-    placeholder:PropTypes.string,
-    required:PropTypes.bool,
-    autoComplete:PropTypes.bool,
-    value:PropTypes.string,
+    placeholder:PropTypes.string.isRequired,
+    required:PropTypes.bool.isRequired,
+    autoComplete:PropTypes.bool.isRequired,
+    value:PropTypes.string.isRequired,
     onChange:PropTypes.func.isRequired,
 }
 
