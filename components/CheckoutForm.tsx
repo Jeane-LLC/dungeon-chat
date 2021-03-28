@@ -54,14 +54,22 @@ Field.propTypes = {
     onChange:PropTypes.func.isRequired,
 }
 
-const SubmitButton = ({processing, error, children, disabled}) => (
+function SubmitButton({processing, error, children, disabled}: InferProps<typeof SubmitButton.propTypes>):React.ReactNode{
+    return (
     <Button
       variant="outlined"
     disabled={processing || disabled}
   >
     {processing ? 'Processing...' : children}
   </Button>
-);
+)};
+
+SubmitButton.propTypes = {
+    processing: PropTypes.bool.isRequired,
+    error:PropTypes.string,
+    children:PropTypes.element,
+    disabled:PropTypes.bool,
+}
 
 const ErrorMessage = ({children}) => (
   <React.Fragment>
