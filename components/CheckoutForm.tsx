@@ -26,7 +26,7 @@ CardField.propTypes = {
 
   onChange:PropTypes.func.isRequired,                                         
 }                       
-const Field = ({
+function Field({
     onSubmit,
     label,
   id,
@@ -36,10 +36,14 @@ const Field = ({
   autoComplete,
   value,
   onChange,
-}) => (
+}: InferProps<typeof Field.propTypes>)(
     <TextField onSubmit={onSubmit} style={{"width":"100%"}} label={label} onChange={onChange} value={value} id={id} placeholder={placeholder} required={required} autoComplete={autoComplete} type={type}>
   </TextField>
 );
+
+Field.propTypes = {
+    onSubmit:PropTypes.func.isRequired,
+}
 
 const SubmitButton = ({processing, error, children, disabled}) => (
     <Button
