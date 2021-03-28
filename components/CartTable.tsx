@@ -7,10 +7,10 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableFooter from "@material-ui/core/TableFooter";
-import PropTypes from "prop-types";
+import PropTypes, {InferProps} from "prop-types";
 
-function CartTable({rows,total=0,onClickRow}){
-    return <React.Fragment>
+function CartTable({rows,total=0,onClickRow}: InferProps<typeof CartTable.propTypes>){
+    return (<React.Fragment>
              <TableContainer>
                <Table>
                  <TableHead>
@@ -41,7 +41,7 @@ function CartTable({rows,total=0,onClickRow}){
                  </TableFooter>
                </Table>
              </TableContainer>
-           </React.Fragment>
+            </React.Fragment>)
 }
 
 CartTable.propTypes = {
