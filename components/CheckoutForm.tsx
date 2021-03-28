@@ -68,7 +68,7 @@ SubmitButton.propTypes = {
     processing: PropTypes.bool.isRequired,
     error:PropTypes.string,
     children:PropTypes.element,
-    disabled:PropTypes.bool,
+    disabled:PropTypes.bool.isRequired,
 }
 
 const ErrorMessage = ({children}) => (
