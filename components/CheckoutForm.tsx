@@ -49,7 +49,7 @@ Field.propTypes = {
     type:PropTypes.string.isRequired,
     placeholder:PropTypes.string.isRequired,
     required:PropTypes.bool.isRequired,
-    autoComplete:PropTypes.bool.isRequired,
+    autoComplete:PropTypes.string.isRequired,
     value:PropTypes.string.isRequired,
     onChange:PropTypes.func.isRequired,
 }
