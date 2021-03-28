@@ -38,7 +38,7 @@ function JoinableDungeonsTable({rows=[]}){
 
     return(
         <React.Fragment>
-        { rows.count > 0 ? <JDTable rows={rows}/> : <JDTablePlaceholder/>
+        { rows.length > 0 ? <JDTable rows={rows}/> : <JDTablePlaceholder/>
           }
         </React.Fragment>
     )
