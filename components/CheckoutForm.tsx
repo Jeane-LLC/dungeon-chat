@@ -71,13 +71,17 @@ SubmitButton.propTypes = {
     disabled:PropTypes.bool.isRequired,
 }
 
-const ErrorMessage = ({children}) => (
+const ErrorMessage:React.ReactNode = ({children}) => (
   <React.Fragment>
     <Typography variant="subtitle2" align="center">{children}</Typography>
   </React.Fragment>
 );
 
-const ResetButton = ({onClick}) => (
+ErrorMessage.propTypes = {
+    children : PropTypes.element,
+}
+
+const ResetButton:React.ReactNode = ({onClick}:InferProps<typeof(ResetButton.propTypes)>) => (
  <button type="button" className="ResetButton" onClick={onClick}>
     <svg width="32px" height="32px" viewBox="0 0 32 32">
       <path
@@ -87,6 +91,10 @@ const ResetButton = ({onClick}) => (
     </svg>
   </button>
 );
+
+ResetButton.propTypes = {
+    onClick:PropTypes.func.isRequired,
+}
 
 
 const CheckoutForm = () => {
@@ -194,7 +202,7 @@ const CheckoutForm = () => {
 
 const stripePromise = loadStripe('pk_test_51IT9atJ4MRcltQjclyx9jsEDAUXWTo8f0uvtQGJKl49RVZDp9KBvxppFr44ixh6uIGzkjASn5JZtBH6B1PnPW0uW006qfX35Sn');
 
-export const InjectedCheckoutForm = () => {
+export const InjectedCheckoutForm:React.ReactNode = () => {
     return <Elements stripe={stripePromise}>
       <CheckoutForm/>
     </Elements>
