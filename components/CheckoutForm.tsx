@@ -70,17 +70,18 @@ SubmitButton.propTypes = {
     disabled:PropTypes.bool.isRequired,
 }
 
-const ErrorMessage:React.ReactNode = ({children}:InferProps<typeof ErrorMessage.propTypes>) => (
+function ErrorMessage({children}:InferProps<typeof ErrorMessage.propTypes>):React.ReactNode{
+    return (
   <React.Fragment>
     <Typography variant="subtitle2" align="center">{children}</Typography>
   </React.Fragment>
-);
+)};
 
 ErrorMessage.propTypes = {
     children : PropTypes.element.isRequired,
 }
 
-const ResetButton:React.ReactNode = ({onClick}:InferProps<typeof ResetButton.propTypes>) => (
+function ResetButton({onClick}:InferProps<typeof ResetButton.propTypes>){return (
  <button type="button" className="ResetButton" onClick={onClick}>
     <svg width="32px" height="32px" viewBox="0 0 32 32">
       <path
@@ -89,7 +90,7 @@ const ResetButton:React.ReactNode = ({onClick}:InferProps<typeof ResetButton.pro
       />
     </svg>
   </button>
-);
+)};
 
 ResetButton.propTypes = {
     onClick:PropTypes.func.isRequired,
