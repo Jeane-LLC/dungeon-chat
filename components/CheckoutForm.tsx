@@ -77,7 +77,7 @@ const ErrorMessage:React.ReactNode = ({children}:InferProps<typeof ErrorMessage.
 );
 
 ErrorMessage.propTypes = {
-    children : PropTypes.element,
+    children : PropTypes.element.isRequired,
 }
 
 const ResetButton:React.ReactNode = ({onClick}:InferProps<typeof(ResetButton.propTypes)>) => (
