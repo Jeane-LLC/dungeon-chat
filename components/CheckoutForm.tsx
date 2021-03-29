@@ -118,7 +118,7 @@ const CheckoutForm = () => {
     }
 
     if (error && elements !== null) {
-      elements.getElement('card').focus();
+      elements!.getElement('card').focus();
       return;
     }
 
