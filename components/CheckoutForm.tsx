@@ -100,7 +100,7 @@ ResetButton.propTypes = {
 const CheckoutForm = () => {
   const stripe = useStripe();
     const elements = useElements();
-  const [error, setError] = React.useState(null);
+  const [error, setError] = React.useState(StripeError);
   const [cardComplete, setCardComplete] = React.useState(false);
   const [processing, setProcessing] = React.useState(false);
   const [paymentMethod, setPaymentMethod] = React.useState(null);
