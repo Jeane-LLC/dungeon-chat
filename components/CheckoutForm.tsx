@@ -71,7 +71,7 @@ SubmitButton.propTypes = {
     disabled:PropTypes.bool.isRequired,
 }
 
-const ErrorMessage:React.ReactNode = ({children}) => (
+const ErrorMessage:React.ReactNode = ({children}:InferProps<typeof<ErrorMessage.propTypes>) => (
   <React.Fragment>
     <Typography variant="subtitle2" align="center">{children}</Typography>
   </React.Fragment>
