@@ -128,7 +128,7 @@ const CheckoutForm = () => {
 
     const payload = await stripe.createPaymentMethod({
       type: 'card',
-      card: elements.getElement(CardElement),
+      card: elements!.getElement(CardElement)!,
       billing_details: billingDetails,
     });
 
