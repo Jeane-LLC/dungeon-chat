@@ -66,7 +66,7 @@ function SubmitButton({processing, error, children, disabled}: InferProps<typeof
 SubmitButton.propTypes = {
     processing: PropTypes.bool.isRequired,
     error:PropTypes.string,
-    children:PropTypes.element,
+    children:PropTypes.string,
     disabled:PropTypes.bool.isRequired,
 }
 
@@ -78,7 +78,7 @@ function ErrorMessage({children}:InferProps<typeof ErrorMessage.propTypes>):Reac
 )};
 
 ErrorMessage.propTypes = {
-    children : PropTypes.element.isRequired,
+    children : PropTypes.string.isRequired,
 }
 
 function ResetButton({onClick}:InferProps<typeof ResetButton.propTypes>){return (
@@ -163,7 +163,7 @@ const CheckoutForm = () => {
     </React.Fragment>
   ) : (
       <React.Fragment>
-        <Grid container direction="column" spacing={2}>
+        <Grid container alignContent="center" direction="column" spacing={2}>
           <Grid item>
             <Field
         onSubmit={handleSubmit}

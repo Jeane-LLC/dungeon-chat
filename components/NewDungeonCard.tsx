@@ -15,8 +15,8 @@ function NewDungeonCard(props){
     return <React.Fragment>
                    <Grid item>
                     
-                     <Button component={Paper} onClick={()=>onClick(title,sku,price)} style={{"text-transform":"none"}}>
-                         <Card elevation="0">
+                     <Button component={Paper} onClick={()=>onClick(title,sku,price)} style={{textTransform:"none"}}>
+                       <Card elevation={0}>
                            <CardHeader title={title} align="left"/>
                            <CardContent>
                              <Typography variant="h2">{"$"+price+"/month"}</Typography>

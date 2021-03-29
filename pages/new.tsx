@@ -10,7 +10,7 @@ import NewDungeonCard from "../components/NewDungeonCard";
 import Avatar from "@material-ui/core/Avatar";
 import CartTable from "../components/CartTable";
 import Button from "@material-ui/core/Button";
-import {InjectedCheckoutForm} from "../components/CheckoutForm"
+import {InjectedCheckoutForm} from "../components/CheckoutForm";
 function NewDungeonPage(){
     const [rows, setRows] = React.useState([]);
     const [total, setTotal] = React.useState(0);
@@ -28,7 +28,7 @@ function NewDungeonPage(){
     }
     
     return <React.Fragment>
-             <Grid container direction="column" alignItems="center" spacing="1">
+             <Grid container direction="column" alignItems="center" spacing={1}>
         <Grid item xs={12}>
           <Typography variant="h1">New Dungeon</Typography>
         </Grid>
