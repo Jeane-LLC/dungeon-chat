@@ -108,7 +108,7 @@ const CheckoutForm = () => {
     email: '',
       });
 
-  const handleSubmit = async (event) => {
+    const handleSubmit = async (event:React.SyntheticEvent) => {
     event.preventDefault();
 
     if (!stripe || !elements) {
