@@ -80,7 +80,7 @@ ErrorMessage.propTypes = {
     children : PropTypes.element.isRequired,
 }
 
-const ResetButton:React.ReactNode = ({onClick}:InferProps<typeof(ResetButton.propTypes)>) => (
+const ResetButton:React.ReactNode = ({onClick}:InferProps<typeof ResetButton.propTypes>) => (
  <button type="button" className="ResetButton" onClick={onClick}>
     <svg width="32px" height="32px" viewBox="0 0 32 32">
       <path
