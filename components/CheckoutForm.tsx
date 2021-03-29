@@ -99,7 +99,7 @@ ResetButton.propTypes = {
 
 const CheckoutForm = () => {
   const stripe = useStripe();
-    const elements = useElements()!;
+    const elements = useElements();
   const [error, setError] = React.useState(null);
   const [cardComplete, setCardComplete] = React.useState(false);
   const [processing, setProcessing] = React.useState(false);
@@ -117,7 +117,7 @@ const CheckoutForm = () => {
       return;
     }
 
-    if (error) {
+    if (error && elements !== null) {
       elements.getElement('card').focus();
       return;
     }
