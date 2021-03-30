@@ -6,7 +6,6 @@ import {
     Elements,
     useStripe,
     useElements,
-    StripeError,
 } from "@stripe/react-stripe-js";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -101,7 +100,7 @@ ResetButton.propTypes = {
 const CheckoutForm = () => {
   const stripe = useStripe();
     const elements = useElements();
-  const [error, setError] = React.useState(StripeError);
+  const [error, setError] = React.useState(null);
   const [cardComplete, setCardComplete] = React.useState(false);
   const [processing, setProcessing] = React.useState(false);
   const [paymentMethod, setPaymentMethod] = React.useState(null);
