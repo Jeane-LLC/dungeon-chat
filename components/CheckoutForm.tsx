@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {loadStripe} from '@stripe/stripe-js';
+import {loadStripe,StripeError,PaymentMethod} from '@stripe/stripe-js';
 import {
     CardElement,
     Elements,
@@ -35,7 +35,7 @@ function Field({
   autoComplete,
   value,
   onChange,
-}: InferProps<typeof Field.propTypes>): React.ReactNode{
+}: InferProps<typeof Field.propTypes>){
     return (
     <TextField onSubmit={onSubmit} style={{"width":"100%"}} label={label} onChange={onChange} value={value} id={id} placeholder={placeholder} required={required} autoComplete={autoComplete} type={type}>
   </TextField>
@@ -53,7 +53,7 @@ Field.propTypes = {
     onChange:PropTypes.func.isRequired,
 }
 
-function SubmitButton({processing, error, children, disabled}: InferProps<typeof SubmitButton.propTypes>):React.ReactNode{
+function SubmitButton({processing, error, children, disabled}: InferProps<typeof SubmitButton.propTypes>){
     return (
     <Button
       variant="outlined"
@@ -65,12 +65,12 @@ function SubmitButton({processing, error, children, disabled}: InferProps<typeof
 
 SubmitButton.propTypes = {
     processing: PropTypes.bool.isRequired,
-    error:PropTypes.string,
+    error:PropTypes.node,
     children:PropTypes.string,
     disabled:PropTypes.bool.isRequired,
 }
 
-function ErrorMessage({children}:InferProps<typeof ErrorMessage.propTypes>):React.ReactNode{
+function ErrorMessage({children}:InferProps<typeof ErrorMessage.propTypes>){
     return (
   <React.Fragment>
     <Typography variant="subtitle2" align="center">{children}</Typography>
@@ -78,7 +78,7 @@ function ErrorMessage({children}:InferProps<typeof ErrorMessage.propTypes>):Reac
 )};
 
 ErrorMessage.propTypes = {
-    children : PropTypes.string.isRequired,
+    children : PropTypes.string,
 }
 
 function ResetButton({onClick}:InferProps<typeof ResetButton.propTypes>){return (
@@ -100,10 +100,10 @@ ResetButton.propTypes = {
 const CheckoutForm = () => {
   const stripe = useStripe();
     const elements = useElements();
-  const [error, setError] = React.useState(null);
+  const [error, setError] = React.useState<StripeError | null>(null);
   const [cardComplete, setCardComplete] = React.useState(false);
   const [processing, setProcessing] = React.useState(false);
-  const [paymentMethod, setPaymentMethod] = React.useState(null);
+  const [paymentMethod, setPaymentMethod] = React.useState<PaymentMethod | null>(null);
   const [billingDetails, setBillingDetails] = React.useState({
     email: '',
       });
@@ -202,7 +202,7 @@ const CheckoutForm = () => {
 
 const stripePromise = loadStripe('pk_test_51IT9atJ4MRcltQjclyx9jsEDAUXWTo8f0uvtQGJKl49RVZDp9KBvxppFr44ixh6uIGzkjASn5JZtBH6B1PnPW0uW006qfX35Sn');
 
-export const InjectedCheckoutForm:React.ReactNode = () => {
+export const InjectedCheckoutForm = () => {
     return <Elements stripe={stripePromise}>
       <CheckoutForm/>
     </Elements>

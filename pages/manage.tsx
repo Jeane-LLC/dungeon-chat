@@ -14,9 +14,9 @@ function ManagePage(){
                  <Typography variant="h1">Manage dungeons</Typography>
                </Grid>
                
-                 <Paper align="center">
+                 <Paper>
                  <Grid item>
-                   <ManageableDungeonsTable/>
+                   <ManageableDungeonsTable rows={[]}/>
                  </Grid>
                  <Grid item>
                    <ButtonGroup variant="contained">

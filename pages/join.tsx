@@ -13,9 +13,9 @@ function JoinPage(){
       <Grid item>
         <Typography variant="h1">Join dungeons</Typography>
       </Grid>
-               <Paper align="center">
+               <Paper>
                <Grid item>
-                 <JoinableDungeonsTable/>
+                 <JoinableDungeonsTable rows={[]}/>
                </Grid>
                <Grid>
                  <ButtonGroup variant="contained">

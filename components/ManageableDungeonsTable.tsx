@@ -8,8 +8,9 @@ import Paper from "@material-ui/core/Paper";
 import TableFooter from "@material-ui/core/TableFooter";
 import TableHead from "@material-ui/core/TableHead";
 import TableBody from "@material-ui/core/TableBody";
+import PropTypes, {InferProps} from "prop-types";
 
-function ManageableDungeonsTable({rows}){
+function ManageableDungeonsTable({rows}:InferProps<typeof ManageableDungeonsTable.propTypes>){
 
     return(
         <React.Fragment>
@@ -41,6 +42,10 @@ function ManageableDungeonsTable({rows}){
           </TableContainer>
         </React.Fragment>
     )
+}
+
+ManageableDungeonsTable.propTypes = {
+    rows:PropTypes.array.isRequired,
 }
 
 export default ManageableDungeonsTable

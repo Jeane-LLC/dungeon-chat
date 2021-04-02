@@ -6,10 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import Link from 'next/link'
 import MuiAlert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
+import PropTypes, {InferProps} from "prop-types";
 
-function CookieAlert(props){
-    return <MuiAlert elevation={6} variant="filled" {...props}/>
-}
+
 
 function HomePage(){
 
@@ -49,9 +48,9 @@ function HomePage(){
                </Grid>
              </Grid>
              <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-               <CookieAlert severity="info" onClose={handleClose}>
+               <MuiAlert elevation={6} variant="filled" severity="info" onClose={handleClose}>
                  This website uses cookies!<br/>Leave now or accept the terms
-               </CookieAlert>
+               </MuiAlert>
              </Snackbar>
            </React.Fragment>
 }

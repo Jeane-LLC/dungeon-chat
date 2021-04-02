@@ -8,8 +8,9 @@ import {
     TableFooter,
     TableCell,
 } from "@material-ui/core"
+import PropTypes, {InferProps} from "prop-types";
 
-function DungeonKeysTable({rows}){
+function DungeonKeysTable({rows}:InferProps<typeof DungeonKeysTable.propTypes>){
 
     return (
         <React.Fragment>
@@ -44,5 +45,8 @@ function DungeonKeysTable({rows}){
     )
 }
 
+DungeonKeysTable.propTypes = {
+    rows: PropTypes.array.isRequired,
+}
 
 export default DungeonKeysTable

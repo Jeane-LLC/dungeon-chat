@@ -11,18 +11,25 @@ import Avatar from "@material-ui/core/Avatar";
 import CartTable from "../components/CartTable";
 import Button from "@material-ui/core/Button";
 import {InjectedCheckoutForm} from "../components/CheckoutForm";
+
+interface Row {
+    key:string;
+    name:string;
+    sku:string;
+    price:number;
+}
 function NewDungeonPage(){
-    const [rows, setRows] = React.useState([]);
-    const [total, setTotal] = React.useState(0);
+    const [rows, setRows] = React.useState<Object[]>([]);
+    const [total, setTotal] = React.useState<number>(0);
     const [k, setK] = React.useState(0);
-    const addToCart = (name,sku,price) => {
+    const addToCart = (name:String,sku:string,price:number) => {
         const row = {key:k,name:name,sku:sku,price:price};
         setK(k=>k+1);
         setRows(rows => [...rows,row]);
         setTotal(total=>total+price);
     }
 
-    const removeFromCart = (row) => {
+    const removeFromCart = (row:Row) => {
         setTotal(total=>total-row.price);
         setRows(rows=>rows.filter(e=>e !== row)); 
     }
@@ -34,7 +41,7 @@ function NewDungeonPage(){
         </Grid>
 
       <Grid container direction="row" spacing={2}>
-        <Grid item xs={12} sm={6} container direction="column" spacing={2} align="right">
+        <Grid item xs={12} sm={6} container direction="column" spacing={2} alignItems="flex-end">
             <NewDungeonCard onClick={addToCart} title="Free Dungeon" price={0} h5="4 person occupancy" body2="For you and three cellmates" sku="0"/>
             <NewDungeonCard onClick={addToCart} title="Micro Dungeon" price={2} h5="10 person occupancy" body2="At most 10 detainees can inhabit this space" sku="1"/>
             <NewDungeonCard onClick={addToCart} title="Small Dungeon" price={10} h5="100 person occupancy" body2="100 souls can dwell here together" sku="3"/>
@@ -42,9 +49,9 @@ function NewDungeonPage(){
           </Grid>
         <Grid item xs={12} sm={5}>
           <Card style={{backgroundColor:`rgba(245,245,245,1.0)`,position:"sticky",top:"5px",maxWidth:"400px"}}>
-            <CardHeader title="Cart" align="center"/>
+            <CardHeader title="Cart" alignItems="center"/>
             <CardContent>
-              <Grid container spacing={2} direction="column" align="right">
+              <Grid container spacing={2} direction="column" alignItems="flex-end">
                 <Grid item>
                   <CartTable rows={rows} total={total} onClickRow={removeFromCart}/>
                 </Grid>

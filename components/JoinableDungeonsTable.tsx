@@ -8,6 +8,7 @@ import TableFooter from "@material-ui/core/TableFooter";
 import TableHead from "@material-ui/core/TableHead";
 import TableBody from "@material-ui/core/TableBody";
 import Typography from "@material-ui/core/Typography";
+import PropTypes, {InferProps} from "prop-types";
 
 function JDTablePlaceholder(){
     return (
@@ -17,7 +18,7 @@ function JDTablePlaceholder(){
     )
 }
 
-function JDTable({rows}){
+function JDTable({rows}:InferProps<typeof JDTable.propTypes>){
     return <React.Fragment>
              <TableContainer>
                <Table>
@@ -34,7 +35,11 @@ function JDTable({rows}){
            </React.Fragment>
 }
 
-function JoinableDungeonsTable({rows=[]}){
+JDTable.propTypes = {
+    rows:PropTypes.array.isRequired,
+}
+
+function JoinableDungeonsTable({rows=[]}:InferProps<typeof JoinableDungeonsTable.propTypes>){
 
     return(
         <React.Fragment>
@@ -42,6 +47,10 @@ function JoinableDungeonsTable({rows=[]}){
           }
         </React.Fragment>
     )
+}
+
+JoinableDungeonsTable.propTypes = {
+    rows:PropTypes.array.isRequired,
 }
 
 export default JoinableDungeonsTable
