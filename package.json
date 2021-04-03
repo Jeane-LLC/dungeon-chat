@@ -32,15 +32,13 @@
     "@vercel/client": "^9.0.8",
     "jest": "^26.6.3",
     "next": "^10.0.9",
-    "next-iron-session": "^4.1.12",
     "package.json": "^2.0.1",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-window": "^1.8.6",
-    "redis": "^3.0.2",
-    "save": "^2.4.0"
+    "redis": "^3.0.2"
   },
   "devDependencies": {
     "@types/prop-types": "^15.7.3",
